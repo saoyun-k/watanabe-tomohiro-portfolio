@@ -1,0 +1,160 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward  "../mixin/section";
+@use "../mixin/section" as sec;
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+@forward  "../mixin/font-aktiv";
+@use "../mixin/font-aktiv" as fa;
+@forward  "../mixin/font-noto";
+@use "../mixin/font-noto" as fn;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+
+.contact {
+  max-width: vp.convertVh(1144px, 1440px);
+  min-width: 335px;
+  margin: 0 auto;
+  @include madia.deviceBreakPointMax(375px) {
+    margin: 0 20px;
+  }
+}
+
+.form {
+  width: vp.convertVw(928px, 1440px);
+  margin-top: vp.convertVw(100px, 1440px);
+  &-inner {
+    &:nth-of-type(1) &__category {
+      margin-right: vp.convertVw(58px, 1440px);
+    }
+    &:nth-of-type(2) {
+      margin-top: vp.convertVw(91px, 1440px);
+    }
+    &:nth-of-type(2) &__category {
+      margin-right: vp.convertVw(62px, 1440px);
+    }
+    &:nth-of-type(3) {
+      margin-top: vp.convertVw(70px, 1440px);
+    }
+    &:nth-of-type(4) ,&:nth-of-type(6){
+      margin-top: vp.convertVw(40px, 1440px);
+    }
+    &:nth-of-type(5) {
+      display: flex;
+      margin-top: vp.convertVw(40px, 1440px);
+      @include madia.deviceBreakPointMax(1070px) {
+        flex-wrap: wrap;
+      }
+    }
+    &:nth-of-type(6) &__category {
+      margin-right: vp.convertVw(62px, 1440px);
+    }
+    &:nth-of-type(6) &__column{
+      margin-top: 20px;
+    }
+    .budget {
+      max-width: 452px;
+      width: vp.convertVw(452px, 1440px);
+      margin-right: 24px;
+    }
+    .delivery {
+      max-width: 452px;
+      width: vp.convertVw(452px, 1440px);
+    }
+    &__category {
+      letter-spacing: .15em;
+      font-size: var.$headerFontSizeSmall;
+      @include fa.fontAktiv;
+      color: #1A1A1A;
+    }
+    .strong {
+      padding: 4px 6px;
+      border: solid 1px var.$colorMainBlack;
+      font-size: 12px;
+      @include fn.fontSyuei;
+    }
+    &__column {
+      margin-top: vp.convertVw(20px, 1440px);
+      line-height: 3.6;
+      white-space: nowrap;
+      @include madia.deviceBreakPointMax(1070px) {
+        white-space: normal;
+      }
+      .consult {
+        font-size: var.$contactFontSmall;
+        @include fn.fontSyuei;
+        &:nth-of-type(1) {
+          margin-right: vp.convertVw(32px, 1440px);
+        }
+        &:nth-of-type(2) {
+          margin-right: vp.convertVw(37px, 1440px);
+        }
+      }
+      &-input {
+        max-width: 928px;
+        min-width: 335px;
+        width: 100%;
+        &.c-pd {
+          @include sp.sitePaddingBase(19px, 16px, 19px, 16px);
+        }
+        &.f-name {
+          max-width: 452px;
+          width: vp.convertVw(450px, 1440px);
+          @include sp.sitePaddingBase(19px, 16px, 19px, 16px);
+          margin-right: 19px;
+        }
+        &.l-name {
+          max-width: 452px;
+          width: vp.convertVw(450px, 1440px);
+          @include sp.sitePaddingBase(19px, 16px, 19px, 16px);
+        }
+        &.m-pd {
+          @include sp.sitePaddingBase(19px, 16px, 19px, 16px);
+          font-size: 18px;
+        }
+        &.b-pd {
+          max-width: 452px;
+          @include sp.sitePaddingBase(19px, 16px, 19px, 16px);
+        }
+        &.d-pd {
+          max-width: 452px;
+          @include sp.sitePaddingBase(19px, 16px, 19px, 16px);
+        }
+        &.c-width {
+          max-width: 928px;
+          width: vp.convertVw(928px, 1440px);
+          height: vp.convertVh(400px, 1440px);
+          @include sp.sitePaddingBase(18px, 10px, 18px, 10px);
+        }
+        &.font {
+          letter-spacing: .1em;
+          font-size: 18px;
+          &::placeholder {
+            color: #D1D1D1;
+          }
+        }
+      }
+    }
+  }
+  &-button {
+    text-align: center;
+    .button {
+      padding: 0;
+      margin: vp.convertVw(60px, 1440px) 0 vp.convertVw(112px, 1440px) 0;
+      letter-spacing: .2em;
+      line-height: 1;
+      border: none;
+      border-bottom: 5px solid var.$colorMainBlack;
+      font-size: var.$contactFontLarger;
+      font-family: var.$fontBase;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  @include madia.deviceBreakPointMin(1441px) {
+    max-width: 1936px;
+  }
+}
+

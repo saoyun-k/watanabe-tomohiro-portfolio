@@ -1,0 +1,19 @@
+$widthSmall: 375px;
+$widthMiddle: 768px;
+$widthBase: 1440px;
+
+
+@mixin sitePaddingBase($top, $right, $bottom, $left) {
+  padding: ($top / $widthBase) * 100vw ($right / $widthBase) * 100vw ($bottom / $widthBase) * 100vw ($left / $widthBase) * 100vw;
+}
+
+@mixin sitePaddingSmall($top, $right, $bottom, $left) {
+  padding: ($top / $widthSmall) * 100vw ($right / $widthSmall) * 100vw ($bottom / $widthSmall) * 100vw ($left / $widthSmall) * 100vw;
+}
+@mixin sitePaddingMiddle($top, $right, $bottom, $left) {
+  padding: ($top / $widthMiddle) * 100vw ($right / $widthMiddle) * 100vw ($bottom / $widthMiddle) * 100vw ($left / $widthMiddle) * 100vw;
+}
+
+@mixin sitePaddingMiddleS($top, $right, $bottom, $left) {
+  padding: ($top / $widthMiddleS) * 100vw ($right / $widthMiddleS) * 100vw ($bottom / $widthMiddleS) * 100vw ($left / $widthMiddleS) * 100vw;
+}

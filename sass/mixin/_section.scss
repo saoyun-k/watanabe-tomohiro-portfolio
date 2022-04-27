@@ -1,0 +1,35 @@
+@mixin sectionTitle {
+  font-size: calc(1rem + ((1vw - 3.75px) * 1.5023));
+  font-weight: 400;
+  font-family: "Optima", "Segoe", sans-serif;
+  color: #FFFFFF;
+  }
+
+@mixin sectionPr {
+  letter-spacing: .05em;
+  line-height: 1.3;
+  font-size: calc(1.5rem + ((1vw - 3.75px) * 3.3803));
+  font-weight: 400;
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-style: normal;
+  color: #222222;
+}
+
+@mixin sectionDesc {
+  line-height: 2.1;
+  font-size: calc(0.75rem + ((1vw - 3.75px) * 0.5634)); 
+  font-weight: 400;
+  font-family: "游ゴシック体", sans-serif;
+  color: #222222;
+}
+
+@mixin sectionMobileborder {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 45%;
+  display: none;
+  width: 60px;
+  height: 1px;
+  background-color: #000000;
+}

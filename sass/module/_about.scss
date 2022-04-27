@@ -1,0 +1,98 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward  "../mixin/section";
+@use "../mixin/section" as sec;
+@forward  "../mixin/font-noto";
+@use "../mixin/font-noto" as fn;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+
+.about {
+  max-width: vp.convertVh(1144px, 1440px);
+  min-width: 335px;
+  margin: 0 auto;
+  @include madia.deviceBreakPointMax(375px) {
+    margin: 0 20px;
+  }
+}
+
+.section-title {
+  &.h3 {
+    @include sec.sectionTitle;
+    @include madia.deviceBreakPointMin(1441px) {
+      font-size: 32px;
+      }
+  }
+}
+.section-pr {
+  &.word {
+    @include sec.sectionPr;
+    @include madia.deviceBreakPointMin(1441px) {
+      font-size: 60px;
+      }
+      @include madia.deviceBreakPointMax(457px) {
+        letter-spacing: .02em;
+      }
+      @include madia.deviceBreakPointMax(375px) {
+        font-size: 20px;
+      }
+    }
+  &.amg {
+    margin-top: vp.convertVw(55px, 1440px);
+  }
+  &.fmg {
+    margin-top: vp.convertVw(129px, 1440px);
+  }
+  &.cmg {
+    margin-top: vp.convertVw(38px, 1440px);
+  }
+}
+.section-description {
+  &.a-box {
+    max-width: 598px;
+    min-width: 335px;
+    width: vp.convertPercent(598px, 1440px);
+    .text:nth-of-type(1) {
+      margin-top: vp.convertVw(56px, 1440px);
+    }
+  }
+  &.text {
+    @include sec.sectionDesc;
+    @include madia.deviceBreakPointMin(1441px) {
+      font-size: 18px;
+      }
+  }
+   .text:nth-of-type(1) {
+    margin-top: vp.convertVw(69px, 1440px);
+  }
+  .text:nth-of-type(2) {
+    margin-top: vp.convertVw(18px, 1440px);
+  }
+}
+
+.hashtag {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: vp.convertVw(49px, 1440px);
+  @include madia.deviceBreakPointMax(508px) {
+    padding-bottom: 64px;
+  }
+  &-name {
+    @include fn.fontNotoBold;
+    color: var.$colorBlack;
+  }
+  &-name:not(:nth-of-type(3)) {
+    margin-right: vp.convertVw(33px, 1440px);
+  }
+  &-name:nth-of-type(3) {
+    display: none;
+    @include madia.deviceBreakPointMax(768px) {
+      display: block;
+      }
+      @include madia.deviceBreakPointMax(508px) {
+        margin-top: 22px;
+      }
+  }
+}

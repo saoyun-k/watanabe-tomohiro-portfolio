@@ -1,0 +1,18 @@
+$fontBase: "Optima", "Segoe", sans-serif;
+$fontYuGothic: "游ゴシック体", sans-serif;
+
+$headerFontSizeLarger: calc(3.0625rem + ((1vw - 3.75px) * 8.5446)); //49~140
+$headerFontSizeSmall: calc(0.75rem + ((1vw - 3.75px) * 0.5634)); //12~18
+$sectionTitleFont: calc(1rem + ((1vw - 3.75px) * 1.5023)); //16~32
+$sectionPrFont: calc(1.5rem + ((1vw - 3.75px) * 3.3803)); //24~60
+$worlsFontSizeLarger: calc(4.375rem + ((1vw - 3.75px) * 1.0329)); //70~81
+$worksFontSizeMiddle: calc(1rem + ((1vw - 3.75px) * 0.7512)); //16~24
+$worksFontSizeSmall: calc(0.625rem + ((1vw - 3.75px) * 0.5634)); //10~16
+$worksFontSizeTiny:  calc(0.625rem + ((1vw - 3.75px) * 0.1878)); //10~12
+$flowFontSizeTiny: calc(0.5rem + ((1vw - 3.75px) * 1.3146)); //8~22
+$contactFontSmall: calc(0.875rem + ((1vw - 3.75px) * 0.3756)); //14~18
+$contactFontLarger: calc(3.75rem + ((1vw - 3.75px) * 1.8779)); //60~80
+
+$colorWhite: #FFFFFF;
+$colorBlack: #000000;
+$colorMainBlack: #222222;

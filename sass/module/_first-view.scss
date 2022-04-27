@@ -1,0 +1,44 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward  "../mixin/font-aktiv";
+@use "../mixin/font-aktiv" as fa;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+
+.first-view {
+  position: relative;
+  &__content {
+    max-width: 580px;
+    max-height: 772px;
+    width: vp.convertVw(580px, 1440px);
+    height: vp.convertVh(772px, 1440px);
+    margin: 0 auto;
+    background-image: url(../images/first-view.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include madia.deviceBreakPointMin(1441px) {
+      width: 580px;
+      }
+  }
+  .occupation {
+    text-align: center;
+    margin-top: vp.convertVw(57px, 1440px);
+    @include madia.deviceBreakPointMin(1441px) {
+      margin-top: 57px;
+      }
+    @include madia.deviceBreakPointMax(375px) {
+      margin-top: 27px;
+      }
+    .salles {
+      letter-spacing: .1em;
+      font-size: var.$headerFontSizeSmall;
+      @include fa.fontAktiv;
+      color: var.$colorMainBlack;
+      @include madia.deviceBreakPointMin(1441px) {
+        font-size: 18px;
+        }
+    }
+  }
+}

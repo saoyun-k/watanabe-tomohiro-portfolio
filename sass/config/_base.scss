@@ -1,0 +1,32 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+
+html {
+  // visibility: hidden;
+  // &.wf-active {
+  //   visibility: visible;
+  // }
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  max-width: 1440px;
+  min-width: 375px;
+  margin: 0 auto;
+  background-color: #DBD7C7;
+  font-family: var.$fontYuGothic;
+  
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+main {
+  margin: vp.convertVw(159px, 1440px) auto vp.convertVw(222px, 1440px);
+}

@@ -1,0 +1,159 @@
+@forward "../config/variables";
+@use "../config/variables" as var;
+@forward  "../function/convert-vp";
+@use "../function/convert-vp" as vp;
+@forward  "../mixin/section";
+@use "../mixin/section" as sec;
+@forward  "../mixin/site-padding";
+@use "../mixin/site-padding" as sp;
+@forward  "../mixin/font-aktiv";
+@use "../mixin/font-aktiv" as fa;
+@forward  "../mixin/font-noto";
+@use "../mixin/font-noto" as fn;
+@forward "../mixin/madia";
+@use "../mixin/madia";
+
+.works {
+  position: relative;
+  max-width: vp.convertVw(1144px, 1440px);
+  min-width: 335px;
+  margin: 0 auto;
+  margin-top: vp.convertVw(97px, 1440px);
+  padding: 68px 0 0 0;
+  @include madia.deviceBreakPointMax(375px) {
+    margin: vp.convertVw(97px, 1440px) 20px 0 20px;
+    }
+    &::before {
+      @include sec.sectionMobileborder;
+      @include madia.deviceBreakPointMax(768px) {
+        display: block;
+        }
+    }
+    .works-title__supplement {
+      margin-top: vp.convertVw(20px, 1440px);
+      font-size: var.$worksFontSizeSmall;
+      color: var.$colorMainBlack;
+    }
+    .works-container {
+      .content {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        @include madia.deviceBreakPointMin(1441px) {
+          flex-wrap: nowrap;
+        }
+        &-inner {
+          position: relative;
+          min-width: 335px;
+          margin-top: vp.convertVw(97px, 1440px);
+          &:nth-child(odd) {
+            max-width: vp.convertVw(388px, 1440px);
+            max-height: vp.convertVh(254px, 1440px);
+            min-height: 218px;
+            margin-right: vp.convertVw(84px, 1440px);
+          }
+          &:nth-child(odd)::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(43, 43, 43, 0.62);
+          }
+          &.num1 {
+            position: relative;
+            &::after {
+              content: "+ 12%";
+              position: absolute;
+              top: 35%;
+              left: 20%;
+              font-size: 69px;
+              @include fa.fontAktiv;
+              color: var.$colorWhite;
+            }
+          }
+          &.num2 {
+            position: relative;
+            &::after {
+              content: "7位";
+              position: absolute;
+              top: 35%;
+              left: 35%;
+              font-size: 69px;
+              @include fa.fontAktiv;
+              color: var.$colorWhite;
+            }
+          }
+          &.num3 {
+            position: relative;
+            &::after {
+              content: "86%";
+              position: absolute;
+              top: 35%;
+              left: 35%;
+              font-size: 69px;
+              @include fa.fontAktiv;
+              color: var.$colorWhite;
+            }
+          }
+          &.num4 {
+            position: relative;
+            &::after {
+              content: "1P";
+              position: absolute;
+              top: 35%;
+              left: 35%;
+              font-size: 69px;
+              @include fa.fontAktiv;
+              color: var.$colorWhite;
+            }
+          }
+          &.num5 {
+            position: relative;
+            &::after {
+              content: "+ 15%";
+              position: absolute;
+              top: 35%;
+              left: 20%;
+              font-size: 70px;
+              @include fa.fontAktiv;
+              color: var.$colorWhite;
+            }
+          }
+          .photo {
+            width: 100%;
+            height: 100%;
+          }
+          &.info {
+            max-width: 640px;
+            width: vp.convertVw(640px, 1440px);
+          }
+          &__name {
+            font-size: var.$worksFontSizeMiddle;
+          }
+          &__category {
+            display: inline-block;
+            margin-top: vp.convertVw(17px, 1440px);
+            padding: 11px 9px 9px 11px;
+            font-size: var.$worksFontSizeTiny;
+            background-color: #F0F0F0;
+          }
+          &__cachievement {
+            margin-top: 20px;
+            line-height: 1.4;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__description-text {
+            margin-top: 20px;
+            line-height: 1.7;
+            font-size: var.$worksFontSizeSmall;
+          }
+        }
+        .top {
+          margin-top: vp.convertVw(54px, 1440px);
+        }
+        }
+      }
+    }
